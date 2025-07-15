@@ -9,11 +9,16 @@ import userRouter from "./routes/user.route.js"
 import listingRouter from "./routes/listing.route.js"
 import bookingRouter from "./routes/booking.route.js"
 let port = process.env.PORT || 6000
-
+const allowedOrigin = 'https://airbnb-304p.onrender.com';
 let app = express()
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors())
+
+
+app.use(cors({
+  origin: allowedOrigin,
+  credentials: true
+}));
 
 app.use("/api/auth", authRouter )
 app.use("/api/user", userRouter )
