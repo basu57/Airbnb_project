@@ -14,7 +14,7 @@ let app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin:"https://airbnb-304p.onrender.com",
+    origin:"https://airbnb-project-chi.vercel.app/",
     credentials:true
 }))
 
